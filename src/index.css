@@ -1,0 +1,98 @@
+:root {
+  --bg: #0a0a0a;
+  --bg-2: #111111;
+  --bg-3: #161616;
+  --ink: #e8f5ea;
+  --muted: #7c8a80;
+  --line: #1e2620;
+  --neon: #39ff88;
+  --neon-dim: #1fa864;
+  --mono: 'JetBrains Mono', monospace;
+  --display: 'Space Grotesk', sans-serif;
+  --sans: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+::selection { background: var(--neon); color: var(--bg); }
+
+/* subtle scanline / grid background — very faint */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(57, 255, 136, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 136, 0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+section { position: relative; z-index: 1; }
+
+/* Section title styling — used across sections */
+.section-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--neon);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-title::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--neon);
+}
+.section-heading {
+  font-family: var(--display);
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin-bottom: 56px;
+  max-width: 20ch;
+}
+.section-heading em {
+  color: var(--neon);
+  font-style: normal;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
+  .section-heading { margin-bottom: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}

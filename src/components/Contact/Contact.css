@@ -1,0 +1,83 @@
+.ct { padding: 120px 0 60px; position: relative; }
+.ct::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(57, 255, 136, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+.ct-mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 48px;
+  transition: color 0.3s, border-color 0.3s, gap 0.3s;
+}
+.ct-mail:hover {
+  color: var(--neon);
+  border-color: var(--neon);
+  gap: 32px;
+}
+.ct-mail svg {
+  font-size: 0.75em;
+  transition: transform 0.3s;
+}
+.ct-mail:hover svg { transform: translateX(6px); }
+
+.ct-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+.ct-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.ct-socials a svg { font-size: 16px; }
+.ct-socials a:hover {
+  color: var(--neon);
+  border-color: var(--neon);
+  background: rgba(57, 255, 136, 0.05);
+  transform: translateY(-3px);
+}
+
+.ct-note {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+  margin-bottom: 24px;
+}
+
+.ct-footer {
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}

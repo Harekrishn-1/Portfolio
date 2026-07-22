@@ -1,0 +1,81 @@
+.ach { padding: 120px 0; }
+
+.ach-lead {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 60ch;
+  margin-bottom: 56px;
+  line-height: 1.65;
+}
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.ach-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.ach-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--line);
+  transition: background 0.3s;
+}
+.ach-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-dim);
+  box-shadow: 0 20px 40px -20px rgba(57, 255, 136, 0.2);
+}
+
+.ach-icon {
+  width: 48px; height: 48px;
+  min-width: 48px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  font-size: 22px;
+  background: var(--bg-3);
+}
+
+.ach-gold  .ach-icon { color: #ffd54a; background: rgba(255, 213, 74, 0.08); }
+.ach-gold::after       { background: #ffd54a; }
+.ach-silver .ach-icon { color: #d0d7dc; background: rgba(208, 215, 220, 0.08); }
+.ach-silver::after     { background: #d0d7dc; }
+.ach-bronze .ach-icon { color: #cd7f32; background: rgba(205, 127, 50, 0.1); }
+.ach-bronze::after     { background: #cd7f32; }
+.ach-code .ach-icon   { color: var(--neon); background: rgba(57, 255, 136, 0.08); }
+.ach-code::after       { background: var(--neon); }
+
+.ach-body h3 {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.ach-ctx {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--neon);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.ach-body p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
